@@ -1,10 +1,13 @@
 import React from 'react';
 import CharacterCard from './CharacterCard';
 import { Link } from 'react-router-dom';
+import Filters from './Filters';
 
 class CharacterList extends React.Component {
   render() {
     return (
+      <div>
+      <Filters valueInput={this.props.valueInput} />
       <ul className="characterList">
       {this.props.data
       .filter(article=>{
@@ -19,6 +22,7 @@ class CharacterList extends React.Component {
         )
       })}
     </ul>
+    </div>
     );
   }
 }

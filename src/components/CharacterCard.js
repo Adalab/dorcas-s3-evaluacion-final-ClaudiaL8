@@ -1,5 +1,4 @@
 import React from 'react';
-import CharacterCardDetails from './CharacterCardDetails';
 
 class CharacterCard extends React.Component {
   render() {

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import CharacterList from './components/CharacterList';
-import Filters from './components/Filters';
 import CharacterCardDetails from './components/CharacterCardDetails';
 
 class App extends Component {
@@ -41,7 +40,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Harry Potter Characters</h1>
-        <Filters valueInput={this.valueInput} />
+
         <Switch>
           <Route
             path='/CharacterCardDetails/:id'
@@ -49,7 +48,8 @@ class App extends Component {
           />
           <Route
             exact path='/' 
-            render={() => <CharacterList data={this.state.data} campo={this.state.campo}/>}
+            render={() => <CharacterList data={this.state.data} campo={this.state.campo} valueInput={this.state.valueInput}/>}
+            
           />
         </Switch>
 
