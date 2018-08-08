@@ -6,11 +6,12 @@ class App extends Component {
     super(props);
     this.state = {
       data: [],
+      campo: ''
     }
-    this.personajes = this.personajes.bind(this);
+  }
+  componentDidMount() {
     this.personajes()
   }
-
   personajes() {
     fetch(
       'http://hp-api.herokuapp.com/api/characters'
@@ -21,32 +22,38 @@ class App extends Component {
       .then((json) => {
         const persons = json;
         this.setState({
-          data: persons
+          data: persons,
+          campo: ''
         })
       })
   }
-
-    render() {
-      return (
-        <div className="App">
-          <h1>Harry Potter Characters</h1>
-          <input type="text" />
-          <ul>
-            {this.state.data.map(function (item) {
-              return (
-                <li>
-                  <div>
-                    <img src={item.image} alt={item.name} />
-                    <h1>{item.name}</h1>
-                    <h4>{item.house}</h4>
-                  </div>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-      );
-    }
+  valueInput(e) {
+    const filtro = e.currentTarget.value;
+    this.setState({
+      campo: filtro
+    });
   }
+  render() {
+    return (
+      <div className="App">
+        <h1>Harry Potter Characters</h1>
+        <input type="text" onChange={this.changeFilter} value={this.state.campo} />
+        <ul>
+          {this.state.data.map(function (item) {
+            return (
+              <li>
+                <div>
+                  <img src={item.image} alt={item.name} />
+                  <h1>{item.name}</h1>
+                  <h4>{item.house}</h4>
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
+    );
+  }
+}
 
-  export default App;
+export default App;
