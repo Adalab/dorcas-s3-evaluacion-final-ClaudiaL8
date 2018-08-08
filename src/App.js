@@ -25,6 +25,13 @@ class App extends Component {
       })
       .then((json) => {
         const persons = json;
+        let resultspersons = [];
+        for (let i=0; i<persons.lenght; i ++){
+          resultspersons[i] = {
+            ...persons[i],
+            property: i
+          }
+        }
         this.setState({
           data: persons
         })

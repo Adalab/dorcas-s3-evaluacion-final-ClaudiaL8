@@ -3,7 +3,7 @@
 }
 .characterList{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 250px 250px 250px 250px;
   list-style: none;
   padding: 0;
   grid-gap: 20px;
@@ -14,7 +14,6 @@
   background-color: rgb(229, 240, 236);;
   border: 1px solid black;
   display: grid;
-  grid-template-rows: 60% 20% 20%; 
   text-align: center;
 }
 .characterImg{
