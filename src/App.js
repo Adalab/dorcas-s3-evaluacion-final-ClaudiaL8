@@ -8,6 +8,7 @@ class App extends Component {
       data: [],
       campo: ''
     }
+    this.valueInput = this.valueInput.bind(this)
   }
   componentDidMount() {
     this.personajes()
@@ -22,8 +23,7 @@ class App extends Component {
       .then((json) => {
         const persons = json;
         this.setState({
-          data: persons,
-          campo: ''
+          data: persons
         })
       })
   }
@@ -37,9 +37,13 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Harry Potter Characters</h1>
-        <input type="text" onChange={this.changeFilter} value={this.state.campo} />
+        <input type="text" onChange={this.valueInput} />
         <ul>
-          {this.state.data.map(function (item) {
+          {this.state.data
+          .filter(article=>{
+            return article.name.toLocaleLowerCase().includes(this.state.campo.toLocaleLowerCase());
+          })
+          .map(item => {
             return (
               <li>
                 <div>
