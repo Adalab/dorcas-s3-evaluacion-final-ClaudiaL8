@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import CharacterList from './components/CharacterList';
 
 class App extends Component {
   constructor(props) {
@@ -38,23 +39,7 @@ class App extends Component {
       <div className="App">
         <h1>Harry Potter Characters</h1>
         <input type="text" onChange={this.valueInput} />
-        <ul>
-          {this.state.data
-          .filter(article=>{
-            return article.name.toLocaleLowerCase().includes(this.state.campo.toLocaleLowerCase());
-          })
-          .map(item => {
-            return (
-              <li>
-                <div>
-                  <img src={item.image} alt={item.name} />
-                  <h1>{item.name}</h1>
-                  <h4>{item.house}</h4>
-                </div>
-              </li>
-            )
-          })}
-        </ul>
+        <CharacterList data={this.state.data} campo={this.state.campo}/>
       </div>
     );
   }
