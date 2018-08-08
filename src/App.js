@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Route, Switch } from 'react-router-dom';
 import CharacterList from './components/CharacterList';
 import Filters from './components/Filters';
+import CharacterCardDetails from './components/CharacterCardDetails';
 
 class App extends Component {
   constructor(props) {
@@ -40,7 +42,17 @@ class App extends Component {
       <div className="App">
         <h1>Harry Potter Characters</h1>
         <Filters valueInput={this.valueInput} />
-        <CharacterList data={this.state.data} campo={this.state.campo}/>
+        <Switch>
+          <Route
+            path='/CharacterCardDetails/:id'
+            render={props => <CharacterCardDetails match={props.match} data={this.state.data}/>}
+          />
+          <Route
+            exact path='/' 
+            render={() => <CharacterList data={this.state.data} campo={this.state.campo}/>}
+          />
+        </Switch>
+
       </div>
     );
   }
