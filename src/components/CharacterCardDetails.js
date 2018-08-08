@@ -7,8 +7,8 @@ class CharacterCardDetails extends React.Component {
       return null;
     } else {
       return (
-        <div className="listItems">
-          <img className="characterImg" src={this.props.data[this.props.match.params.id].image} alt="" />
+        <div className="itemDetails">
+          <img className="characterImg" src={this.props.data[this.props.match.params.id].image} alt="{this.props.data[this.props.match.params.id].name}" />
           <h1>{this.props.data[this.props.match.params.id].name}</h1>
           <p>{this.props.data[this.props.match.params.id].house}</p>
           <p>{this.props.data[this.props.match.params.id].yearOfBirth}</p>

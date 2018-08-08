@@ -47,7 +47,7 @@ class App extends Component {
           />
           <Route
             exact path='/'
-            render={() => <CharacterList data={this.state.data} campo={this.state.campo} valueInput={this.state.valueInput} />}
+            render={() => <CharacterList data={this.state.data} campo={this.state.campo} valueInput={this.valueInput} />}
           />
         </Switch>
       </div>
