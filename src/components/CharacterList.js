@@ -1,4 +1,5 @@
 import React from 'react';
+import CharacterCard from './CharacterCard';
 
 class CharacterList extends React.Component {
   render() {
@@ -11,11 +12,7 @@ class CharacterList extends React.Component {
       .map(item => {
         return (
           <li>
-            <div>
-              <img src={item.image} alt={item.name} />
-              <h1>{item.name}</h1>
-              <h4>{item.house}</h4>
-            </div>
+            <CharacterCard item={item} />
           </li>
         )
       })}

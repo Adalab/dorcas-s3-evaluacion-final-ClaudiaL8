@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import CharacterList from './components/CharacterList';
+import Filters from './components/Filters';
 
 class App extends Component {
   constructor(props) {
@@ -38,7 +39,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Harry Potter Characters</h1>
-        <input type="text" onChange={this.valueInput} />
+        <Filters valueInput={this.valueInput} />
         <CharacterList data={this.state.data} campo={this.state.campo}/>
       </div>
     );
