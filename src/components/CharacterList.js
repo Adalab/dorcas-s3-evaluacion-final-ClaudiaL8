@@ -16,8 +16,9 @@ class CharacterList extends React.Component {
       .map (function (item,index) {
         return (
           <li>
-            <Link to={`/CharacterCardDetails/${index}`}>{item.name}</Link>
+            <Link to={`/CharacterCardDetails/${index}`}>
             <CharacterCard item={item} />
+            </Link>
           </li>
         )
       })}

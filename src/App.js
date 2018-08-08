@@ -40,19 +40,16 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Harry Potter Characters</h1>
-
         <Switch>
           <Route
             path='/CharacterCardDetails/:id'
-            render={props => <CharacterCardDetails match={props.match} data={this.state.data}/>}
+            render={props => <CharacterCardDetails match={props.match} data={this.state.data} />}
           />
           <Route
-            exact path='/' 
-            render={() => <CharacterList data={this.state.data} campo={this.state.campo} valueInput={this.state.valueInput}/>}
-            
+            exact path='/'
+            render={() => <CharacterList data={this.state.data} campo={this.state.campo} valueInput={this.state.valueInput} />}
           />
         </Switch>
-
       </div>
     );
   }
