@@ -13,10 +13,10 @@ class CharacterList extends React.Component {
       .filter(article=>{
         return article.name.toLocaleLowerCase().includes(this.props.campo.toLocaleLowerCase());
       })
-      .map (function (item,index) {
+      .map (function (item) {
         return (
           <li>
-            <Link to={`/CharacterCardDetails/${index}`}>
+            <Link to={`/CharacterCardDetails/${item.id}`}>
             <CharacterCard item={item} />
             </Link>
           </li>
