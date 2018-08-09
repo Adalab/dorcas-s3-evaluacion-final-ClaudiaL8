@@ -87,3 +87,15 @@ a:link {
 .ButtonHome{
   margin-top: 30px;
 }
+@media all and (max-width:768px) {
+  .characterList{
+    display: grid;
+    grid-template-columns: 1Fr 1Fr 1Fr;
+  }
+}
+@media all and (max-width:320px) {
+  .characterList{
+    display: grid;
+    grid-template-columns: 1Fr;
+  }
+}
