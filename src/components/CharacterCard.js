@@ -1,4 +1,5 @@
 import React from 'react';
+
 let house = '';
 class CharacterCard extends React.Component {
   render() {

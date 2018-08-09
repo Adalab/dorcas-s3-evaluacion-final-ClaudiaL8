@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 let status = '';
 class CharacterCardDetails extends React.Component {
   render() {
@@ -13,20 +15,26 @@ class CharacterCardDetails extends React.Component {
         status = 'SIN INFORMACIÓN'
       }
       return (
-        <div className="CardDetails">
-          <div className="divDetails">
-            <div className="imgContainerDetails" style={{ backgroundImage: `url(${this.props.data[this.props.match.params.id].image})` }}>
-              <img className="imgDetails" src={this.props.data[this.props.match.params.id].image} alt={this.props.data[this.props.match.params.id].name} />
-            </div>
-            <div className="datosContainer">
-              <h2 className="titleDatos">{this.props.data[this.props.match.params.id].name}</h2>
-              <p className="parDatos">Casa: {this.props.data[this.props.match.params.id].house}</p>
-              <p className="parDatos">Nacimiento: {this.props.data[this.props.match.params.id].yearOfBirth}</p>
-              <p className="parDatos">Patronus: {this.props.data[this.props.match.params.id].patronus}</p>
-              <p className="parDatos">Estado: {status}</p>
+        <React.Fragment>
+          <div className="CardDetails">
+            <div className="divDetails">
+              <div className="imgContainerDetails" style={{ backgroundImage: `url(${this.props.data[this.props.match.params.id].image})` }}>
+                <img className="imgDetails" src={this.props.data[this.props.match.params.id].image} alt={this.props.data[this.props.match.params.id].name} />
+              </div>
+              <div className="datosContainer">
+                <h2 className="titleDatos">{this.props.data[this.props.match.params.id].name}</h2>
+                <p className="parDatos">Casa: {this.props.data[this.props.match.params.id].house}</p>
+                <p className="parDatos">Nacimiento: {this.props.data[this.props.match.params.id].yearOfBirth}</p>
+                <p className="parDatos">Patronus: {this.props.data[this.props.match.params.id].patronus}</p>
+                <p className="parDatos">Estado: {status}</p>
+              </div>
             </div>
           </div>
-        </div>
+          <Link to={`/`}>
+            <button className="ButtonHome">Lista</button>
+          </Link>
+
+        </React.Fragment>
       );
     }
   }
