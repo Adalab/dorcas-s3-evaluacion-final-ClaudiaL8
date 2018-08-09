@@ -18,7 +18,7 @@ class App extends Component {
   }
   personajes() {
     fetch(
-      'http://hp-api.herokuapp.com/api/characters'
+      'https://hp-api.herokuapp.com/api/characters'
     )
       .then(function (response) {
         return response.json();

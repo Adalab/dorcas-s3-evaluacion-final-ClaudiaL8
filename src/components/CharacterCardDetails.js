@@ -33,7 +33,6 @@ class CharacterCardDetails extends React.Component {
           <Link to={`/`}>
             <button className="ButtonHome">Lista</button>
           </Link>
-
         </React.Fragment>
       );
     }

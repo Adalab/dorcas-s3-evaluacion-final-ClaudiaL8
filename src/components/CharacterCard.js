@@ -5,7 +5,7 @@ class CharacterCard extends React.Component {
   render() {
     if (this.props.item.house === '') {
       house = 'SIN CASA';
-    }else{
+    } else {
       house = this.props.item.house;
     }
     return (
