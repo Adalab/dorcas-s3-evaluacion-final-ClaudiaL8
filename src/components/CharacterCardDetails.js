@@ -8,7 +8,7 @@ class CharacterCardDetails extends React.Component {
       if (this.props.data[this.props.match.params.id].alive === true) {
         status = 'VIVO';
       } else if (this.props.data[this.props.match.params.id].alive === false) {
-        status = 'MUERTO';
+        status = '💀';
       } else {
         status = 'SIN INFORMACIÓN'
       }
