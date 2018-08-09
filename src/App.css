@@ -1,22 +1,68 @@
 .App{
   text-align: center;
 }
+.page__input{
+  width: 320px;
+  border: 1px black solid;
+  height: 20px;
+}
+.div__characterList{
+  display: flex;
+  justify-content: center;
+}
 .characterList{
+  margin-top: 50px;
   display: grid;
-  grid-template-columns: 250px 250px 250px 250px;
+  grid-template-columns: 200px 200px 200px 200px;
   list-style: none;
   padding: 0;
   grid-gap: 20px;
-  margin-left: 200px;
-  margin-right: 200px;
 }
-.listItems{
-  background-color: rgb(229, 240, 236);;
+.divContainer{
+  background-color: rgb(219, 130, 79);
   border: 1px solid black;
   display: grid;
   text-align: center;
 }
+.divItems{
+  height: 290px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .characterImg{
-  width: auto;
-  height: 250px;
+  width: 0;
+  height: 0;
+}
+.characterName{
+  padding: 15px;
+  line-height: 20px;
+  height: 20px;
+  margin-top: 5px;
+  color:white;
+  font-weight: bold;
+}
+.characterHouse{
+  color:white;
+}
+a:link { 
+  text-decoration:none; 
+} 
+.divDetails{
+  display: flex;
+  background-color: rgb(219, 130, 79);
+}
+.imgContainerDetails{
+  height: 290px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+}
+.imgDetails{
+  width: 0;
+  height: 0;
+}
+.datosContainer{
+  width: 50%;
 }

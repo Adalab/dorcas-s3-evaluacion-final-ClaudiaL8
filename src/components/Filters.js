@@ -3,7 +3,7 @@ import React from 'react';
 class Filters extends React.Component {
   render() {
     return (
-      <input type="text" onChange={this.props.valueInput} />
+      <input className="page__input" type="text" onChange={this.props.valueInput} />
     );
   }
 }
